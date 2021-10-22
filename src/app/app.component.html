@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+  <mat-sidenav #snav>
+    <mat-nav-list>
+      <a mat-list-item href="" class="snipcart-user-profile" (click)="snav.close()">Signup</a>
+      <a mat-list-item href="" class="snipcart-user-profile" (click)="snav.close()"><span class="snipcart-user-email">Login</span></a>
+      <a mat-list-item routerLink="/shop" (click)="snav.close()">Shop</a>
+      <a mat-list-item href="" class="snipcart-user-logout" (click)="snav.close()">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header>
+      <mat-toolbar color="primary">
+        <div fxHide.gt-xs>
+          <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div><a routerLink="/" (click)="snav.close()">The MEAN Store</a></div>
+        <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li><a href="" class="snipcart-user-profile"><span class="snipcart-user-email">Log In</span></a></li>
+            <li><a href="" class="snipcart-user-profile"><span class="snipcart-user-email">Sign Up</span></a></li>
+            <li><a routerLink="/shop">Shop</a></li>
+            <li><a href="" class="snipcart-user-logout">Logout</a></li>
+          </ul>
+        </div>
+      </mat-toolbar>
+    </header>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    <button mat-fab class="snipcart-checkout"><mat-icon>shopping_cart</mat-icon></button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
